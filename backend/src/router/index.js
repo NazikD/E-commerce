@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory} from "vue-router";
 import Dashboard from "../views/Dashboard.vue";
 import Login from "../views/Login.vue";
+import RequestPassword from "../views/RequestPassword.vue";
 
 const routes = [
     {
@@ -13,7 +14,11 @@ const routes = [
         name: 'login',
         component: Login
     },
-];
+    {
+        path: '/request-password',
+        name: 'request_password',
+        component: RequestPassword,
+    },];
 
 const router = createRouter({
     history: createWebHistory(),
