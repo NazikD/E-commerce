@@ -28,7 +28,7 @@
         <div class="text-sm">
           <router-link
             class="font-semibold text-indigo-600 hover:text-indigo-500"
-            :to="{ name: 'request_password' }"
+            :to="{ name: 'requestPassword' }"
             >Forgot password?</router-link
           >
         </div>
