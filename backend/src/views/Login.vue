@@ -1,3 +1,29 @@
+<script setup>
+import {ref} from 'vue'
+import {LockClosedIcon} from '@heroicons/vue/solid'
+import GuestLayout from "../components/GuestLayout.vue";
+import store from "../store";
+import router from "../router";
+
+let loading = ref(false);
+let errorMsg = ref("");
+
+const user = {
+  email: '',
+  password: '',
+  remember: false
+}
+
+function login() {
+  store.dispatch('login', user)
+    .then(() => {
+      router.push({name: 'app.dashboard'})
+    })
+    .catch(({response}) => {
+    })
+}
+</script>
+
 <template>
   <GuestLayout title="Sing in to your account" @submit="login">
     <div>
@@ -56,13 +82,7 @@
   </GuestLayout>
 </template>
 
-<script setup>
-import GuestLayout from "../components/GuestLayout.vue";
 
-function login() {
-  console.log("login");
-}
-</script>
 
 <style>
 </style>
