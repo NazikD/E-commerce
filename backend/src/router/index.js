@@ -6,13 +6,8 @@ import RequestPassword from "../views/RequestPassword.vue";
 import ResetPassword from "../views/ResetPassword.vue";
 import AppLayout from "../components/AppLayout.vue";
 import NotFound from "../views/NotFound.vue";
-import Products from "../views/Products/Products.vue";
 
 const routes = [
-    {
-        path: "/",
-        redirect: "/app",
-    },
     {
         path: "/app",
         name: "app",

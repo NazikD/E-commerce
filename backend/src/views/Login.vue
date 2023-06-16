@@ -5,7 +5,7 @@ import GuestLayout from "../components/GuestLayout.vue";
 import store from "../store";
 import router from "../router";
 
-let loading = ref(false);
+// let loading = ref(false);
 let errorMsg = ref("");
 
 const user = {
@@ -20,12 +20,14 @@ function login() {
       router.push({name: 'app.dashboard'})
     })
     .catch(({response}) => {
+        errorMsg.value = response.data.message;
     })
 }
 </script>
 
 <template>
-  <GuestLayout title="Sing in to your account" @submit="login">
+  <GuestLayout title="Sing in to your account">
+    <form class="mt-8 space-y-6" method="POST" @submit.prevent="login">
     <div>
       <label
         for="email"
@@ -35,6 +37,7 @@ function login() {
       <div class="mt-2">
         <input
           id="email"
+          v-model="user.email"
           name="email"
           type="email"
           autocomplete="email"
@@ -62,6 +65,7 @@ function login() {
       <div class="mt-2">
         <input
           id="password"
+          v-model="user.password"
           name="password"
           type="password"
           autocomplete="current-password"
@@ -79,6 +83,8 @@ function login() {
         Sign in
       </button>
     </div>
+    <input type="hidden" name="remember" value="true"/>
+</form>
   </GuestLayout>
 </template>
 

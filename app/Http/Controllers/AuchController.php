@@ -18,7 +18,7 @@ class AuthController extends Controller
         ]);
 
         $remember = $credentials['remember'] ?? false;
-        unset ($credentials['$remember']);
+        unset ($credentials['remember']);
         if (!Auth::attempt($credentials, $remember)) {
             return response([
                 'message' => 'Email or password is incorrect'

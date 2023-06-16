@@ -20,9 +20,6 @@
   import Sidebar from "./Sidebar.vue";
   import Navbar from "./Navbar.vue";
   import store from "../store";
-//   import Spinner from "./core/Spinner.vue";
-//   import Toast from "./core/Toast.vue";
-
 //   const {title} = defineProps({
 //     title: String
 //   })
